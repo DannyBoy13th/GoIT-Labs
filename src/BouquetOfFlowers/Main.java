@@ -1,41 +1,34 @@
-package com.goit.BouquetOfFlowers;
+package BouquetOfFlowers;
 
+import java.util.Set;
+import java.util.TreeSet;
 
-/**
- * Created by Daniel Solo on 09.03.2016.
- */
 public class Main {
-    public static void main(String [] args){;
-        Flower RegularFlower=new Flower();
-        Chamomile Chamomile=new Chamomile();
-        Aster Aster=new Aster();
-        Tulip Tulip=new Tulip();
-        Rose Rose=new Rose();
-        Rosebush Rosebush=new Rosebush();
-        BouquetOfFlowers Wedding=new BouquetOfFlowers();
+    public static void main(String [] args){
+        BouquetOfFlowers weddingBouquet = new BouquetOfFlowers();
 
-        Wedding.Bouquet();
+        weddingBouquet.addFlowers(new Rose("Red Rose", "Red", 5));
+        weddingBouquet.addFlowers(new Rose("Violet Rose", "Violet", 7));
+        weddingBouquet.addFlowers(new Chamomile("Chamomile", "White", 3));
+        weddingBouquet.addFlowers(new Tulip("Yel Tulip", "Yellow", 4));
+        weddingBouquet.addFlowers(new Tulip("Blue Tulip", "Blue", 6));
+        weddingBouquet.addFlowers(new Aster("Reg Aster", "Pink", 8));
+
+        PrintContent.Print(weddingBouquet.getWeddingBouquet());
+
+        Set<Flower> sortedByName = new TreeSet<Flower>((o1, o2) -> o1.getFlowerName().compareTo(o2.getFlowerName()));
+        sortedByName.addAll(weddingBouquet.getWeddingBouquet());
         System.out.println();
+        System.out.println("List sorted by name: ");
+        PrintContent.Print(sortedByName);
 
-        System.out.println("Detailed Contents:");
-        System.out.println("Chamomile");
-        Chamomile.Color();
-        Chamomile.Price();
-        Chamomile.Quantity();
+        Set<Flower> sortedByPrice = new TreeSet<Flower>((o1, o2) -> o1.getFlowerPrice() - o2.getFlowerPrice());
+        sortedByPrice.addAll(weddingBouquet.getWeddingBouquet());
         System.out.println();
+        System.out.println("List sorted by price: ");
+        PrintContent.Print(sortedByPrice);
 
-        System.out.println("Aster");
-        Aster.Color();
-        Aster.Price();
-        Aster.Quantity();
-        System.out.println();
 
-        System.out.println("Rose");
-        Tulip.Color();
-        Tulip.Price();
-        Tulip.Quantity();
-        System.out.println();
-
-        Rosebush.Bush();
     }
+
 }

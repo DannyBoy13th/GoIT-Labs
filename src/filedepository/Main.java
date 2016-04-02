@@ -1,4 +1,4 @@
-package com.goit.filedepository;
+package filedepository;
 
 /**
  * Created by Daniel Solo on 08.03.2016.

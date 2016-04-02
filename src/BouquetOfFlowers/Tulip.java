@@ -1,16 +1,34 @@
-package com.goit.BouquetOfFlowers;
+package BouquetOfFlowers;
 
-/**
- * Created by Daniel Solo on 06.03.2016.
- */
-public class Tulip extends Flower {
-    public void Color(){
-        System.out.println("Yellow");
+class Tulip extends Flower {
+    private String flowerName;
+    private String flowerColor;
+    private int flowerPrice;
+
+    public Tulip(String flowerName, String flowerColor, int flowerPrice){
+        super(flowerName, flowerColor, flowerPrice);
+        this.flowerName = flowerName;
+        this.flowerColor = flowerColor;
+        this.flowerPrice = flowerPrice;
     }
-    public void Price(){
-        System.out.println("$3");
+
+    @Override
+    public String getFlowerColor() {
+        return flowerColor;
     }
-    public void Quantity(){
-        System.out.println("4");
+
+    @Override
+    public String getFlowerName() {
+        return flowerName;
+    }
+
+    @Override
+    public int getFlowerPrice() {
+        return flowerPrice;
+    }
+
+    @Override
+    public String toString() {
+        return flowerName + flowerColor + flowerPrice;
     }
 }

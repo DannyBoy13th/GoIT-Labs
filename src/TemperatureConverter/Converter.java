@@ -1,7 +1,5 @@
 package TemperatureConverter;
 
-import java.util.IllegalFormatException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
     /**

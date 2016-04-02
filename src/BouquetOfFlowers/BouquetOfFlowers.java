@@ -1,34 +1,14 @@
-package com.goit.BouquetOfFlowers;
+package BouquetOfFlowers;
 
-import java.util.*;
 
-/**
- * Created by Daniel Solo on 06.03.2016.
- */
+import java.util.ArrayList;
+
 public class BouquetOfFlowers {
-    public String Bouquet="Beautiful wedding bouquet which consist of;";
-    public String Cham="Chamomiles";
-    public String Ast="Asters";
-    public String Tul="Tulips";
-    public String Ros="Roses";
-
-    private List Flowers = Arrays.asList(Cham, Ast, Tul, Ros);
-
-    public List getFlowers() {
-        return Flowers;
+    ArrayList<Flower> weddingBouquet = new ArrayList<>();
+    public void addFlowers (Flower flower){
+        weddingBouquet.add(flower);
     }
-
-    public void setFlowers(List flowers) {
-        Flowers = flowers;
-    }
-
-    Iterator itr=Flowers.iterator();
-
-    public void Bouquet(){
-        System.out.println(Bouquet);
-        while(itr.hasNext())
-
-            System.out.println(itr.next());
-
+    public ArrayList<Flower> getWeddingBouquet(){
+        return weddingBouquet;
     }
 }

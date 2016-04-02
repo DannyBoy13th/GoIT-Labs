@@ -1,4 +1,4 @@
-package com.goit.filedepository;
+package filedepository;
 
 
 import java.util.Arrays;

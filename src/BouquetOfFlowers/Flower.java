@@ -1,27 +1,27 @@
-package com.goit.BouquetOfFlowers;
+package BouquetOfFlowers;
 
-/**
- * Created by Daniel Solo on 06.03.2016.
- */
-public class Flower{
-    private String Name;
+abstract class Flower{
+    private String flowerName;
+    private String flowerColor;
+    private int flowerPrice;
 
-    public void Color(){
-        System.out.println("Unknown");
-    }
-    public void Price(){
-        System.out.println("Unknown");
-    }
-    public void Quantity(){
-        System.out.println("Unknown");
+    public Flower(String flowerName, String flowerColor, int flowerPrice){
+        this.flowerName = flowerName;
+        this.flowerColor = flowerColor;
+        this.flowerPrice = flowerPrice;
     }
 
-    public String getName() {
-        return Name;
+    public String getFlowerColor() {
+        return flowerColor;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public String getFlowerName() {
+        return flowerName;
     }
 
+    public int getFlowerPrice() {
+        return flowerPrice;
+    }
+
+    public abstract String toString();
 }
