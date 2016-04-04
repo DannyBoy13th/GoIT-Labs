@@ -8,7 +8,4 @@ public class Picture extends File {
     public void Open(){
         System.out.println("You`re looking at the picture");
     }
-    public void Close(){
-        System.out.println("Picture is closed");
-    }
 }

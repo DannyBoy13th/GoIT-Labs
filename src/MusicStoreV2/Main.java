@@ -13,7 +13,6 @@ public class Main {
         Trumpet Horn = new Trumpet();
 
 
-
         Jamz.Inventory();
         System.out.println();
 
@@ -21,8 +20,7 @@ public class Main {
         Rocker.Type();
         System.out.print("$");
         Rocker.Price();
-        System.out.print("Quantity: " + Rocker.getQuantity());
-        System.out.println();
+        System.out.print("Quantity: " + Rocker.getQuantity()+"\n");
         Rocker.Play();
         System.out.println();
 
@@ -30,8 +28,7 @@ public class Main {
         Mozart.Type();
         System.out.print("$");
         Mozart.Price();
-        System.out.print("Quantity: " + Mozart.getQuantity());
-        System.out.println();
+        System.out.print("Quantity: " + Mozart.getQuantity()+"\n");
         Mozart.Play();
         System.out.println();
 
@@ -39,8 +36,7 @@ public class Main {
         Horn.Type();
         System.out.print("$");
         Horn.Price();
-        System.out.print("Quantity: " + Horn.getQuantity());
-        System.out.println();
+        System.out.print("Quantity: " + Horn.getQuantity()+"\n");
         Horn.Play();
         System.out.println();
 
@@ -56,8 +52,7 @@ public class Main {
         order.put("Trumpet", 10);
 
 
-        System.out.println("Your order is: ");
-        System.out.println();
+        System.out.println("Your order is: \n");
         System.out.println(order);
         System.out.println();
 
@@ -88,9 +83,7 @@ public class Main {
             System.out.println("ERROR: Not enough Instruments");
         }
 
-        System.out.println();
-        System.out.println("Inventory after the purchase:");
-        System.out.println();
+        System.out.println("\nInventory after the purchase:\n");
         System.out.println("Guitars: " + GuitarsLeft);
         System.out.println("Pianos: " + PianosLeft);
         System.out.println("Trumpets: " + HornsLeft);

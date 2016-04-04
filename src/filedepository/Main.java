@@ -5,27 +5,22 @@ package filedepository;
  */
 public class Main {
 
-    public static void main(String [] args){;
+    public static void main(String [] args){
        FileDepository Rar=new FileDepository();
-       File OrdinaryFile=new File();
         Picture Yaremche=new Picture();
         AudioFile SpanishSahara=new AudioFile();
         TextFile AboutMe=new TextFile();
 
-        System.out.println("MyFiles.rar");
-        System.out.println();
+        System.out.println("MyFiles.rar\n");
         Rar.Content();
-        System.out.println();
 
-        System.out.println("Yaremche.jpg");
+        System.out.println("\nYaremche.jpg");
         Yaremche.Open();
-        System.out.println();
 
-        System.out.println("Play Music");
+        System.out.println("\nPlay Music");
         SpanishSahara.Open();
-        System.out.println();
 
-        System.out.println("Read Text");
+        System.out.println("\nRead Text");
         AboutMe.Open();
     }
 }

@@ -22,59 +22,49 @@ public class Counter {
         double Radius;
         double Pi = 3.1412;
 
-        System.out.println("Space Counter");
-        System.out.println();
+        System.out.println("Space Counter\n");
         System.out.println("Please enter a shape which you would like to count (Triangle, Circle or Rectangle): ");
-
-
-        if (ShapeScanner.hasNext("Triangle")){
-
-            System.out.println("Please, print in the Height of triangle");
-
-            if (TriangleMeter.hasNextDouble()) {
-                Height = TriangleMeter.nextDouble();
-
-                System.out.println();
-                System.out.println("Please, print in Side C of the triangle");
-                sideC = TriangleMeter.nextDouble();
-
-                System.out.println();
-                System.out.println("Result is: " + Height * sideC / 2);
-
-            }
-        }
-        if (ShapeScanner.hasNext("Circle")){
-            System.out.println("Please, print in radius of the circle");
-
-            if (CircleMeter.hasNextDouble()){
-                Radius = CircleMeter.nextDouble();
-
-                System.out.println();
-                System.out.println("Result is: " + Radius * Radius *Pi);
-            }
-        }
-        if (ShapeScanner.hasNext("Rectangle")){
-            System.out.println("Please, print in Side A of the rectangle");
-
-            if (RectangleMeter.hasNextDouble()){
-                sideA = RectangleMeter.nextDouble();
-
-                System.out.println();
-                System.out.println("Please, print in Side B of the rectangle");
-                sideB = RectangleMeter.nextDouble();
-
-                System.out.println();
-                System.out.println("Result is: " + sideB * sideA);
-            }
-        }
         try {
-            if (ShapeScanner.hasNext()) {
+
+            if (ShapeScanner.hasNext("Triangle")) {
+
+                System.out.println("Please, print in the Height of triangle");
+
+                if (TriangleMeter.hasNextDouble()) {
+                    Height = TriangleMeter.nextDouble();
+
+                    System.out.println("\nPlease, print in Side C of the triangle");
+                    sideC = TriangleMeter.nextDouble();
+
+                    System.out.println("\nResult is: " + Height * sideC / 2);
+
+                }
+            }
+            if (ShapeScanner.hasNext("Circle")) {
+                System.out.println("Please, print in radius of the circle");
+
+                if (CircleMeter.hasNextDouble()) {
+                    Radius = CircleMeter.nextDouble();
+
+                    System.out.println("\nResult is: " + Radius * Radius * Pi);
+                }
+            }
+            if (ShapeScanner.hasNext("Rectangle")) {
+                System.out.println("Please, print in Side A of the rectangle");
+
+                if (RectangleMeter.hasNextDouble()) {
+                    sideA = RectangleMeter.nextDouble();
+
+                    System.out.println("\nPlease, print in Side B of the rectangle");
+                    sideB = RectangleMeter.nextDouble();
+
+                    System.out.println("\nResult is: " + sideB * sideA);
+                }
+            } else {
                 throw new InputMismatchException();
             }
-        }catch (InputMismatchException A){
+            }catch(InputMismatchException A){
             System.out.println("ERROR: Wrong Shape!");
         }
-
     }
-
 }

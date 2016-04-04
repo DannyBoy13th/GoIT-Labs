@@ -16,8 +16,7 @@ import java.util.Scanner;
             double FahrenheitTemp;
 
 
-            System.out.println("Temperature Converter");
-            System.out.println();
+            System.out.println("Temperature Converter\n");
             System.out.println("Please choose a type you would like to convert your temperature to, Celsius or Fahrenheit): ");
 
             if (TypeofTempScan.hasNext("Fahrenheit")) {
@@ -28,8 +27,7 @@ import java.util.Scanner;
 
                     if (CelConverter.hasNextDouble()) {
                         CelsiusTemp = CelConverter.nextDouble();
-                        System.out.println();
-                        System.out.println("Result is: " + ((1.8 * CelsiusTemp) + 32.0) + " degrees by Fahrenheit");
+                        System.out.println("\nResult is: " + ((1.8 * CelsiusTemp) + 32.0) + " degrees by Fahrenheit");
 
                     }
                     if (CelConverter.hasNext()){
@@ -48,8 +46,7 @@ import java.util.Scanner;
                 if (FarConverter.hasNextDouble()){
                     FahrenheitTemp = FarConverter.nextDouble();
 
-                    System.out.println();
-                    System.out.println("Result is: " + (-32+FahrenheitTemp)/1/1.8 + " degrees by Celsius" );
+                    System.out.println("\nResult is: " + (-32+FahrenheitTemp)/1/1.8 + " degrees by Celsius" );
                 }
                     if (FarConverter.hasNext()){
                         throw new NumberFormatException();

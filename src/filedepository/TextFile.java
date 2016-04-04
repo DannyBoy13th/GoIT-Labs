@@ -8,8 +8,5 @@ public class TextFile extends File {
     public void Open(){
         System.out.println("You`re reading about me");
     }
-    public void Close(){
-        System.out.println("Text File is closed");
-    }
 
 }

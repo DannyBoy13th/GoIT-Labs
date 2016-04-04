@@ -11,9 +11,6 @@ public class File {
     public void Open(){
         System.out.println("Open");
     }
-    public void Close(){
-        System.out.println("Close");
-    }
 
     public String getName() {
         return Name;

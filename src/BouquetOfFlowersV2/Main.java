@@ -5,8 +5,11 @@ import java.util.TreeSet;
 
 public class Main {
     public static void main(String [] args){
+
+       //Example of BouquetOfFlowers class which consist of ArrayList
         BouquetOfFlowers weddingBouquet = new BouquetOfFlowers();
 
+        //Content of weddingBouquet:
         weddingBouquet.addFlowers(new Rose("Red Rose", "Red", 5));
         weddingBouquet.addFlowers(new Rose("Violet Rose", "Violet", 7));
         weddingBouquet.addFlowers(new Chamomile("Chamomile", "White", 3));
@@ -16,16 +19,16 @@ public class Main {
 
         PrintContent.Print(weddingBouquet.getWeddingBouquet());
 
+        //Sorting by NAME:
         Set<Flower> sortedByName = new TreeSet<Flower>((o1, o2) -> o1.getFlowerName().compareTo(o2.getFlowerName()));
         sortedByName.addAll(weddingBouquet.getWeddingBouquet());
-        System.out.println();
-        System.out.println("List sorted by name: ");
+        System.out.println("\nList sorted by name: ");
         PrintContent.Print(sortedByName);
 
+        //Sorting by PRICE:
         Set<Flower> sortedByPrice = new TreeSet<Flower>((o1, o2) -> o1.getFlowerPrice() - o2.getFlowerPrice());
         sortedByPrice.addAll(weddingBouquet.getWeddingBouquet());
-        System.out.println();
-        System.out.println("List sorted by price: ");
+        System.out.println("\nList sorted by price: ");
         PrintContent.Print(sortedByPrice);
 
 

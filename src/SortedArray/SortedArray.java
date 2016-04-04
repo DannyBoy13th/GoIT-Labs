@@ -11,8 +11,7 @@ public class SortedArray {
         int[] intArray = {39, 3, 27, 4, 13, 7, 29, 35, 33, 19, 84, 14, 2255, 123, 93, 954, 41, 614, 31, 52};
 
 
-        System.out.println("Below you can see our whole list of numbers in sorted order:");
-        System.out.println();
+        System.out.println("Below you can see our whole list of numbers in sorted order:\n");
 
         Arrays.sort(intArray);
 
@@ -20,9 +19,7 @@ public class SortedArray {
             System.out.println(element);
         }
 
-        System.out.println();
-        System.out.println("Right now, program will calculate the lowest and the highest numbers in the list");
-        System.out.println();
+        System.out.println("\nRight now, program will calculate the lowest and the highest numbers in the list\n");
 
        int low = intArray[0];
        int high = intArray[0];
@@ -34,10 +31,9 @@ public class SortedArray {
                 low = intArray[i];
         }
 
-        System.out.println();
+
         System.out.println("Highest number:" + high);
-        System.out.println();
-        System.out.println("Lowest Number:" + low);
+        System.out.println("\nLowest Number:" + low);
 
 
 

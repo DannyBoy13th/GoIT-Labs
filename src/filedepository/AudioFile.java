@@ -11,7 +11,4 @@ public class AudioFile extends File {
         public void Open(){
                 System.out.println("Playing music Spanish Sahara By Foals");
         }
-        public void Close(){
-                System.out.println("Music stopped");
-        }
 }
