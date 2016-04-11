@@ -1,6 +1,7 @@
 package SpaceCounter;
 
-import java.lang.invoke.WrongMethodTypeException;
+import org.jetbrains.annotations.Contract;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,6 +9,10 @@ import java.util.Scanner;
  * Created by DannyBoy13th on 11.03.2016.
  */
 public class Counter {
+
+    private static double sideC;
+    private static double height;
+
     public static void main(String[] args) {
 
         Scanner ShapeScanner = new Scanner(System.in);
@@ -20,7 +25,7 @@ public class Counter {
         double sideA;
         double sideB;
         double Radius;
-        double Pi = 3.1412;
+
 
         System.out.println("Space Counter\n");
         System.out.println("Please enter a shape which you would like to count (Triangle, Circle or Rectangle): ");
@@ -36,7 +41,7 @@ public class Counter {
                     System.out.println("\nPlease, print in Side C of the triangle");
                     sideC = TriangleMeter.nextDouble();
 
-                    System.out.println("\nResult is: " + Height * sideC / 2);
+                    System.out.println("\nResult is: " + triangleCounter(sideC, Height));
 
                 }
             }
@@ -46,7 +51,7 @@ public class Counter {
                 if (CircleMeter.hasNextDouble()) {
                     Radius = CircleMeter.nextDouble();
 
-                    System.out.println("\nResult is: " + Radius * Radius * Pi);
+                    System.out.println("\nResult is: " + circleCounter(Radius));
                 }
             }
             if (ShapeScanner.hasNext("Rectangle")) {
@@ -58,13 +63,30 @@ public class Counter {
                     System.out.println("\nPlease, print in Side B of the rectangle");
                     sideB = RectangleMeter.nextDouble();
 
-                    System.out.println("\nResult is: " + sideB * sideA);
+                    System.out.println("\nResult is: " + rectangleCounter(sideA, sideB));
                 }
             } else {
-                throw new InputMismatchException();
+                throw new InputMismatchException("Wrong Shape!");
             }
-            }catch(InputMismatchException A){
-            System.out.println("ERROR: Wrong Shape!");
+
+        } finally {
+            System.out.println("\nProgram closed");
         }
+
+    }
+
+    @Contract(pure = true)
+    public static double triangleCounter(double sideC, double height){
+        Counter.sideC = sideC;
+        Counter.height = height;
+        return (sideC * height) / 2;
+    }
+
+    private static double circleCounter(double radius){
+        double Pi = 3.1412;
+        return (radius * Pi);
+    }
+    private static double rectangleCounter(double sideA, double sideB){
+        return sideA * sideB;
     }
 }
