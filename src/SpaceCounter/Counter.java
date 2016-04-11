@@ -1,7 +1,5 @@
 package SpaceCounter;
 
-import org.jetbrains.annotations.Contract;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,8 +18,8 @@ public class Counter {
         Scanner CircleMeter = new Scanner(System.in);
         Scanner RectangleMeter = new Scanner(System.in);
 
-        double Height;
-        double sideC;
+        int Height;
+        int sideC;
         double sideA;
         double sideB;
         double Radius;
@@ -36,10 +34,10 @@ public class Counter {
                 System.out.println("Please, print in the Height of triangle");
 
                 if (TriangleMeter.hasNextDouble()) {
-                    Height = TriangleMeter.nextDouble();
+                    Height = TriangleMeter.nextInt();
 
                     System.out.println("\nPlease, print in Side C of the triangle");
-                    sideC = TriangleMeter.nextDouble();
+                    sideC = TriangleMeter.nextInt();
 
                     System.out.println("\nResult is: " + triangleCounter(sideC, Height));
 
@@ -75,10 +73,9 @@ public class Counter {
 
     }
 
-    @Contract(pure = true)
-    public static double triangleCounter(double sideC, double height){
-        Counter.sideC = sideC;
-        Counter.height = height;
+
+
+    public static int triangleCounter(final int sideC, final int height){
         return (sideC * height) / 2;
     }
 
@@ -89,4 +86,6 @@ public class Counter {
     private static double rectangleCounter(double sideA, double sideB){
         return sideA * sideB;
     }
+
+
 }
